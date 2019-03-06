@@ -8,7 +8,7 @@ Need mongo > 4 running locally
 
 `yarn install`
 
-`npm run api`
+`npm run start`
 
 #### Test
 
