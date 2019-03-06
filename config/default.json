@@ -1,0 +1,10 @@
+{
+    "env": "DEVELOPMENT",
+    "api": {
+        "port": 8080,
+        "mongodb": {
+            "url": "mongodb://localhost:27017",
+            "name": "crud"
+        }
+    }
+}
