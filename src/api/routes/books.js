@@ -64,11 +64,12 @@ router.get(`/${version}/books/:id`, async (req, res) => {
 
 router.patch(`/${version}/books/:id`, async (req, res) => {
 	try {
+		let book = await models.books.updateById(req.params.id, req.body)
 		res.json({
 			status_code: 200,
 			status: "success",
-			message: "The book was updated successfully.",
-			data: await models.books.updateById(req.params.id, req.body)
+			message: `The ${book.name} book was updated successfully.`,
+			data: book
 		})
 	} catch (err) {
 		console.log(err)
@@ -79,11 +80,12 @@ router.patch(`/${version}/books/:id`, async (req, res) => {
 
 router.post(`/${version}/books/:id/update`, async (req, res) => {
 	try {
+		let book = await models.books.updateById(req.params.id, req.body)
 		res.json({
 			status_code: 200,
 			status: "success",
-			message: "The book was updated successfully.",
-			data: await models.books.updateById(req.params.id, req.body)
+			message: `The ${book.name} book was updated successfully.`,
+			data: book
 		})
 	} catch (err) {
 		console.log(err)
@@ -94,11 +96,12 @@ router.post(`/${version}/books/:id/update`, async (req, res) => {
 
 router.post(`/${version}/books/:id/delete`, async (req, res) => {
 	try {
+		let book = await models.books.getById(req.params.id)
 		await models.books.deleteById(req.params.id)
 		res.json({
 			status_code: 200,
 			status: "success",
-			message: "The book was deleted successfully.",
+			message: `The ${book.name} book was deleted successfully.`,
 			data: []
 		})
 	} catch (err) {
@@ -110,11 +113,12 @@ router.post(`/${version}/books/:id/delete`, async (req, res) => {
 
 router.delete(`/${version}/books/:id`, async (req, res) => {
 	try {
+		let book = await models.books.getById(req.params.id)
 		await models.books.deleteById(req.params.id)
 		res.json({
 			status_code: 200,
 			status: "success",
-			message: "The book was deleted successfully.",
+			message: `The ${book.name} book was deleted successfully.`,
 			data: []
 		})
 	} catch (err) {

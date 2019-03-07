@@ -35,6 +35,7 @@ describe ('API', () => {
 
 
 	describe('Internal', function () {
+
         before((done) => {
             // BOOTSTRAP
             setTimeout(() => {
@@ -125,7 +126,7 @@ describe ('API', () => {
                     expect(res.body.status_code).to.equal(200)
                     expect(res.body.status).to.equal('success')
                     expect(res.body.data.id).to.equal('2')
-                    expect(res.body.message).to.equal('The book was updated successfully.')
+                    expect(res.body.message).to.equal('The A Clash of Kings 2 book was updated successfully.')
                     done()
                 })
         })
@@ -152,7 +153,7 @@ describe ('API', () => {
                     expect(res.body.status_code).to.equal(200)
                     expect(res.body.status).to.equal('success')
                     expect(res.body.data.id).to.equal('2')
-                    expect(res.body.message).to.equal('The book was updated successfully.')
+                    expect(res.body.message).to.equal('The Another name book was updated successfully.')
                     done()
                 })
         })
@@ -177,7 +178,7 @@ describe ('API', () => {
                 .end((err, res) => {
                     expect(res.body.status_code).to.equal(200)
                     expect(res.body.status).to.equal('success')
-                    expect(res.body.message).to.equal('The book was deleted successfully.')
+                    expect(res.body.message).to.equal('The Another name book was deleted successfully.')
                     done()
                 })
         })
@@ -189,7 +190,7 @@ describe ('API', () => {
                 .end((err, res) => {
                     expect(res.body.status_code).to.equal(200)
                     expect(res.body.status).to.equal('success')
-                    expect(res.body.message).to.equal('The book was deleted successfully.')
+                    expect(res.body.message).to.equal('The A Clash of Kings book was deleted successfully.')
                     done()
                 })
         })
@@ -205,9 +206,6 @@ describe ('API', () => {
                     done()
                 })
         })
-
-
-
 
 	})
 })
